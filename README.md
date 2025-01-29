@@ -1,5 +1,8 @@
 # MySQL Portfolio Project
 
+### Tech used: Excel, MySQL
+### Data Source:  https://www.kaggle.com/datasets/stackoverflow/stackoverflow/data?
+
 ## In this project, I have used multiple joins
 
 - to combine multiple tables (Users, Posts and Comments) to find what comments are made.
@@ -34,5 +37,5 @@
   ![image](https://github.com/user-attachments/assets/38021f3f-acc7-4926-8c12-c893ab178aa7)
 
 
-
+## Please star if this has helped you.
   
