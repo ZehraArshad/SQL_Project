@@ -1,5 +1,5 @@
 ## SQL Portfolio Project Analyzing Stack Overflow's Data 
-[Open File](Portfolio\README.md)
+[Open File](/Portfolio/README.md)
 
 
 ## Best Question to learn window functions and running totals
