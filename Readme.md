@@ -9,4 +9,4 @@
 
 ## Sometimes, case is not enough
 
--[Count Salary Categories and return zero if that range doesn't exist](https://leetcode.com/problems/count-salary-categories/description/)
+- [Count Salary Categories and return zero if that range doesn't exist](https://leetcode.com/problems/count-salary-categories/description/)
