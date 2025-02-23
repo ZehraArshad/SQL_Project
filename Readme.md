@@ -12,3 +12,7 @@
 
 - [Count Salary Categories and return zero if that range doesn't exist](https://leetcode.com/problems/count-salary-categories/description/)
 
+
+## Subqueries and Joins Combined
+
+- [Product Price on a given date](https://leetcode.com/problems/product-price-at-a-given-date/description/)
