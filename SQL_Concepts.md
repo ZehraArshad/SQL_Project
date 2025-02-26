@@ -100,13 +100,13 @@ These are used to create windows overs a table
 #### Use Cases
 - Running Totals or Averages (Addings sales at each row)
 
+- What comes after or before a value?
   ```sql
    SELECT customer_id, amount_due, SUM(amount_due) OVER(order by customer_id) as running_sums FROM billing;
 ```
 
 </br>
 
-- What comes after or before a value?
 
 ```sql
 SELECT DISTINCT num ConsecutiveNums from (
