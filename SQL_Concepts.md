@@ -67,15 +67,55 @@ GROUP BY sell_date;
   This is where most people stop. I did too but I came when I learned this
 
   - For a table that contains salaries, I want to compare employees that have salaries higher than the **average salary**
-  - You have 10 salaries that have to be compared against a single average values, HOW?!
+  - You have 10 salaries that have to be compared against a single average value, HOW?!
   - :bulb: That is where we use sub queries
-    
+    -- Selecting all columns from the employees table 
+``` sql
+SELECT * 
+FROM employees 
+WHERE salary > (SELECT avg(salary) FROM employees);
+``` 
 
-  
-  
+  ### Common Table Expressions (CTEs)
 
-  
+- In subquery, there was a single average, what if we have multiple departments with each having its own average?
+- :bulb: We will use CTEs.
 
+``` sql
+  WITH DeptAvgSalary AS (
+    SELECT department_id, AVG(salary) AS avg_salary
+    FROM employees
+    GROUP BY department_id
+)
+SELECT e.employee_id, e.name, e.salary, d.avg_salary, e.department_id
+FROM employees e
+JOIN DeptAvgSalary d ON e.department_id = d.department_id
+WHERE e.salary > d.avg_salary;
+
+  ```
+
+### Window Functions
+
+These are used to create windows overs a table
+#### Use Cases
+- Running Totals or Averages (Addings sales at each row)
+
+  ```sql
+   SELECT customer_id, amount_due, SUM(amount_due) OVER(order by customer_id) as running_sums FROM billing;
+```
+
+- What comes after or before a value?
+
+``` sql
+SELECT DISTINCT num ConsecutiveNums from (
+
+SELECT id, NUM, LAG(num) OVER(ORDER BY id) laging, LEAD(num) OVER(ORDER BY id) leader FROM logs
+)
+t
+WHERE (laging = num  AND num = leader)
+;
+
+```
   
 
   
