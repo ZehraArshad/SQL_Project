@@ -51,7 +51,7 @@ ORDER BY column_names;
 - I can use **group_concat** which is ideal when we want to combine string or non-numeric rows.
   ![image](https://github.com/user-attachments/assets/ac34466e-235f-4f2e-a719-3ab533d97b6a)
 
-(Source)[https://leetcode.com/problems/group-sold-products-by-the-date/description/]
+[Source](https://leetcode.com/problems/group-sold-products-by-the-date/description/)
 
 ```sql
 SELECT sell_date,
@@ -81,7 +81,7 @@ WHERE salary > (SELECT avg(salary) FROM employees);
 - In subquery, there was a single average, what if we have multiple departments with each having its own average?
 - :bulb: We will use CTEs.
 
-``` sql
+```sql
   WITH DeptAvgSalary AS (
     SELECT department_id, AVG(salary) AS avg_salary
     FROM employees
@@ -104,9 +104,10 @@ These are used to create windows overs a table
    SELECT customer_id, amount_due, SUM(amount_due) OVER(order by customer_id) as running_sums FROM billing;
 ```
 
-- What comes after or before a value?
+</br>
 
-``` sql
+- What comes after or before a value?
+```sql
 SELECT DISTINCT num ConsecutiveNums from (
 
 SELECT id, NUM, LAG(num) OVER(ORDER BY id) laging, LEAD(num) OVER(ORDER BY id) leader FROM logs
@@ -116,7 +117,8 @@ WHERE (laging = num  AND num = leader)
 ;
 
 ```
-  
+If this helped you, please :star: and follow. 
+   
 
   
 
