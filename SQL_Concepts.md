@@ -91,8 +91,7 @@ SELECT e.employee_id, e.name, e.salary, d.avg_salary, e.department_id
 FROM employees e
 JOIN DeptAvgSalary d ON e.department_id = d.department_id
 WHERE e.salary > d.avg_salary;
-
-  ```
+```
 
 ### Window Functions
 
@@ -100,24 +99,42 @@ These are used to create windows overs a table
 #### Use Cases
 - Running Totals or Averages (Addings sales at each row)
 
-- What comes after or before a value?
+
+
   ```sql
    SELECT customer_id, amount_due, SUM(amount_due) OVER(order by customer_id) as running_sums FROM billing;
 ```
-
-</br>
-
+- What comes after or before a value [LeetCode - Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/)
 
 ```sql
-SELECT DISTINCT num ConsecutiveNums from (
 
-SELECT id, NUM, LAG(num) OVER(ORDER BY id) laging, LEAD(num) OVER(ORDER BY id) leader FROM logs
-)
-t
-WHERE (laging = num  AND num = leader)
-;
+  SELECT DISTINCT num ConsecutiveNums from (
+SELECT id, NUM, LAG(num) OVER(ORDER BY id) laging, LEAD(num) OVER(ORDER BY id) leader FROM logs)
+  t WHERE (laging = num  AND num = leader)
+```
+
+
+- Creating averages over a window of a week [Leetcode - Restaurant Growth](https://leetcode.com/problems/restaurant-growth/)
+
+```sql
+with cte1 as (
+
+    select visited_on, sum(amount) as amt from customer group by visited_on order by visited_on
+),
+
+
+cte2 as(
+
+select visited_on, sum(amt) over(order by visited_on rows between 6 preceding and current row) as amount,
+round(avg(amt) over(order by visited_on rows between 6 preceding and current row),2) as average_amount,
+lag(visited_on, 6) over() as day_window
+from cte1 order by visited_on )
+
+select visited_on, amount, average_amount 
+FROM cte2 WHERE day_window IS NOT NULL;
 
 ```
+
 If this helped you, please :star: and follow. 
    
 
