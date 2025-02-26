@@ -107,6 +107,7 @@ These are used to create windows overs a table
 </br>
 
 - What comes after or before a value?
+
 ```sql
 SELECT DISTINCT num ConsecutiveNums from (
 
