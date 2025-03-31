@@ -42,6 +42,7 @@ ORDER BY column_names;
 - LEFT JOIN  Returns data from left but only the common data between the two tables from the right.
 - RIGHT JOIN Opposite of the left join
 - FULL OUTER JOIN - Returns everything which means you will be seeing some nulls. :mag:
+- SELF JOIN - [Best Explanation](https://www.canva.com/design/DAGfFvUvkek/LXb3eP88KGryOVUvWXN1tw/edit?utm_content=DAGfFvUvkek&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ### Group By
 
