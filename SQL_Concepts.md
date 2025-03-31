@@ -1,5 +1,6 @@
 # SQL Concepts You Need To Know Before Jumping Into Leetcoding
 
+✴️✴️✴️✴️ [SELF JOINS](https://www.canva.com/design/DAGfFvUvkek/LXb3eP88KGryOVUvWXN1tw/edit?utm_content=DAGfFvUvkek&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ### Order of Statments
 This is the order in which the statements will be written.
